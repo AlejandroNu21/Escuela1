@@ -1,0 +1,50 @@
+﻿
+@{ ViewData["Title"] = "MostrarCourses";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<h1>Lista de Cursos</h1>
+<br />
+<button type="submit" class="btn btn-info animate_animated animate_backInDown"> @Html.ActionLink("Registrar Nuevo Curso", "Indexdos", "Course")</button>
+<br />
+<br />
+<table id="mitabla" class="table table-dark table-hover">
+    <thead>
+        <tr>
+            @*<th>Course Id</th>*@
+            <th>Title</th>
+            <th>Credits</th>
+        </tr>
+
+    </thead>
+
+</table>
+
+@section scripts{
+
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var tabla = $('#mitabla').DataTable({
+                "ajax": {
+                    "url": '/Course/GetAll',
+                    "type": "get",
+                    "datatype": "json"
+                },
+                "columns": [
+                    /*{ "data": "courseId", "name": "courserId", "autoWidth": true },*/
+                    { "data": "title", "name": "title", "autoWidth": true },
+                    { "data": "credits", "name": "credits", "autoWidth": true }
+
+                ]
+
+
+            })
+        })
+    </script>
+
+}
+
+<button type="submit" class="btn btn-info animate_animated animate_backInDown"> @Html.ActionLink("INICIO", "Index", "Home")</button>

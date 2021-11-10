@@ -1,0 +1,56 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+
+
+<div class="text-center">
+    <h1 class="display-4">BIENVENIDO</h1>
+
+</div>
+
+<link rel="stylesheet" href="~/css/Inicio.css" />
+
+<link rel="stylesheet"
+      href="https://kit.fontawesome.com/ffd11ebe0f.js" crossorigin="anonymous" />
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js>" />
+
+<script src="https://kit.fontawesome.com/ffd11ebe0f.js" crossorigin="anonymous"></script>
+
+<body>
+    <header class="bg_animate">
+        <div class="header_nav">
+            <div class="contenedor">
+                <nav>
+                    <br />
+                    <i class="fas fa-user-circle"></i>
+                    @Html.ActionLink("Mostrar Estudiantes", "MostrarAlumnos", "Student")
+                    <br />
+                    <br />
+                    <i class="fa fa-bullhorn"></i>
+                    @Html.ActionLink("Lista Enrollement", "ListaEnrollement", "Enrollement")
+                    <br />
+                    <br />
+                    <i class="fa fa-building"></i>
+                    @Html.ActionLink("Mostrar Course", "MostrarCourses", "Course")
+                    <br />
+                    <br />
+                </nav>
+            </div>
+        </div>
+        <div class="burbujas">
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+        </div>
+    </header>
+</body>

@@ -1,0 +1,55 @@
+﻿@model List<Escuela.Dominio.Enrollment>
+@{ ViewData["Title"] = "ListaEnrollement";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h1 class="text-center">Lista de Enrollement</h1>
+<br />
+<button type="submit" class="btn btn-info animate_animated animate_backInDown"> @Html.ActionLink("Registrar Nuevo Enrollement", "ComboBox", "Enrollement")</button>
+<br />
+<br />
+<table id="mitablaenr" class="table table-dark table-hover">
+    <thead>
+        <tr>
+            @*<th>Id Ernrollment</th>
+                <th>Student Id</th>
+                <th>Course Id</th>*@
+            <th>Last Name</th>
+            <th>FirstMidName</th>
+            <th>Course</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var iteracion in Model)
+        {
+<tr>
+    @*<td>@iteracion.EnrollmentId</td>
+        <td>@iteracion.StudentID</td>
+        <td>@iteracion.Course.CourseId</td>*@
+    <td>@iteracion.Student.LastName</td>
+    <td>@iteracion.Student.FirstMidName</td>
+    <td>@iteracion.Course.Title</td>
+</tr>}
+
+
+    </tbody>
+
+</table>
+
+@section Scripts{
+
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var tabla = $('#mitablaenr').DataTable({
+
+
+            })
+        })
+    </script>
+}
+
+<button type="submit" class="btn btn-info animate_animated animate_backInDown"> @Html.ActionLink("INICIO", "Index", "Home")</button>

@@ -1,0 +1,66 @@
+﻿@model Escuela.Dominio.Students
+@{ ViewData["Title"] = "SaveStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h3 class="wow animate__animated animate__pulse" data-wow-duration="2s" data-wow-delay="2s">Inscripcion de Estudiantes</h3>
+<script src="https://cdn.boomcdn.com/libs/wow-js/1.3.0/wow.js"></script>
+<script type="text/javascript">new WOW().init();</script>
+
+<link rel="stylesheet"
+      href="https://kit.fontawesome.com/ffd11ebe0f.js" crossorigin="anonymous" />
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js>" />
+
+<script src="https://kit.fontawesome.com/ffd11ebe0f.js" crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js">
+
+
+@using (Html.BeginForm("SaveStudent", "Student", FormMethod.Post))
+{
+
+
+<h4 class="text-center">BIENVENIDO</h4>
+                <br>
+                                <i class="fa fa-file-signature"></i>
+                                                <label>First Mid Name</label>
+                                                                <br />
+                                                                                @Html.TextBoxFor(m => m.FirstMidName)
+                                                                                                <br />
+                                                                                                                @Html.ValidationMessageFor(m => m.FirstMidName)
+                                                                                                                                <br />
+                                                                                                                                                <br />
+                                                                                                                                                                <i class="fa fa-input-text"></i>
+                                                                                                                                                                                <br />
+                                                                                                                                                                                                <label>LastName</label>
+                                                                                                                                                                                                                <br />
+                                                                                                                                                                                                                                @Html.TextBoxFor(m => m.LastName)
+                                                                                                                                                                                                                                                <br />
+                                                                                                                                                                                                                                                                @Html.ValidationMessageFor(m => m.LastName)
+                                                                                                                                                                                                                                                                                <br />
+                                                                                                                                                                                                                                                                                                <br />
+                                                                                                                                                                                                                                                                                                                <div class="form-group">
+                                                                                                                                                                                                                                                                                                                    <i class="fas fa-calendar-day"></i>
+                                                                                                                                                                                                                                                                                                                    <label>Date</label>
+                                                                                                                                                                                                                                                                                                                    <input required asp-for="EnrollmentsDate" class="form-control " />
+                                                                                                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                                                                                                                <input type="submit" class="btn btn-success animate__animated animate__backInDown" value="GUARDAR" />
+                                                                                                                                                                                                                                                                                                                                                <br>
+    <br />
+    
+                                                                                                                                                                                                                                                                                                                                                                <button type="submit" class="btn btn-info animate_animated animate_backInDown"> @Html.ActionLink("Lista de Estudiantes Registrados", "MostrarAlumnos")</button>
+                                                                                                                                                                                                                                                                                                                                                                <br />
+                                                                                                                                                                                                                                                                                                                                                                <br />
+                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                
+}
+
+
